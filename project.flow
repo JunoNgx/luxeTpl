@@ -1,4 +1,15 @@
 {
+    luxe: {
+        window: {
+            width: 1280,
+            height: 720,
+            title: 'myproject',
+            fullscreen: false,
+            resizable: false,
+            borderless: true
+        }
+    },
+
 	flow : {
         build: {
             android : {
@@ -25,6 +36,12 @@
 		name : 'LuxeApp',
 		package : 'com.luxeengine.myapp',
 		main : 'Main',
+        mobile: {
+            orientation: 'landscape',
+            android: {
+                sdk_target: '19'
+            }
+        }
     },
 
     build : {
