@@ -6,6 +6,8 @@ import luxe.Color;
 import luxe.Vector;
 import luxe.Camera;
 
+import C;
+
 class Play extends State {
 
 	// This is your main gameplay state and should totally be in your control
@@ -30,7 +32,7 @@ class Play extends State {
 	}
 
 	override public function update(dt: Float) {
-		block.rotation_z += 40 * dt;
+		block.rotation_z += C.rotate_speed * dt;
 	}
 
 	override public function onleave<T> (_:T) {

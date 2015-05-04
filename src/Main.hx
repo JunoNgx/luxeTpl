@@ -7,6 +7,7 @@ import states.Splash;
 class Main extends luxe.Game {
 
 	var initialState:String = 'splash'; // First state to run, in string (luxe.States.State.name), refer to state's file
+	var showCursor:Bool = true; // Display system cursor in-game, useful for custom cursor or certain genres of action games
 
 	public static var state: States;
 
@@ -21,6 +22,9 @@ class Main extends luxe.Game {
 	}
 
 	override function ready() {
+
+		// Quick setting
+		Luxe.screen.cursor.visible = showCursor;
 
 		// Create a state machine [...]
 		state = new States( { name: "states" } );

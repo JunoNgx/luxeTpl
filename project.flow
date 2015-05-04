@@ -5,8 +5,8 @@
             height: 720,
             title: 'myproject',
             fullscreen: false,
-            resizable: false,
-            borderless: true
+            resizable: true,
+            borderless: false
         }
     },
 
