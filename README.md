@@ -24,6 +24,8 @@ files : {
 
 ```
 
+The process is also demonstrated in ```Luxe```'s [test of ```TouchEvents```](https://github.com/underscorediscovery/luxe/tree/master/tests/features/touch_events) (at ```tests/features/touch_events```).
+
 # Closing
 
 Feedback are appreciated and welcomed.

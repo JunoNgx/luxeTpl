@@ -22,7 +22,9 @@ class Main extends luxe.Game {
 
 	override function config(config:luxe.AppConfig):luxe.AppConfig {
 
-		// Preloading textures, optional
+		// Preloading resources
+		// Resources in Luxe are generally required
+		// to be pre-loaded before used
 		config.preload.textures = [
 			{id: 'assets/logo_box.png'}
 		];
@@ -30,7 +32,7 @@ class Main extends luxe.Game {
 		return config;
 	}
 
-	// Scale camera's viewport accordingly when game is scaled
+	// Scale camera's viewport accordingly when game is scaled, common and suitable for most games
 	override function onwindowsized( e:WindowEvent ) {
         Luxe.camera.viewport = new luxe.Rectangle( 0, 0, e.event.x, e.event.y);
     }
@@ -47,7 +49,7 @@ class Main extends luxe.Game {
 		state.add (new Play({name: 'play'}));
 		state.add (new Splash({name: 'splash'}));
 
-		// Set the inital state upon running the game
+		// Run the inital state upon running the game
 		state.set(initialState);
 
 	}
