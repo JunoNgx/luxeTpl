@@ -1,13 +1,22 @@
 package;
 
+import luxe.Screen.WindowEvent;
+
 import luxe.States;
 import states.Play;
 import states.Splash;
 
 class Main extends luxe.Game {
 
+	// Optional values,
+	// useful when game does not fully cover the
+	// entire screen, great to use when
+	// Luxe.camera.size_mode == SizeMode.fit
+	// public static var w: Int = 480;
+	// public static var h: Int = 640;
+
 	var initialState:String = 'splash'; // First state to run, in string (luxe.States.State.name), refer to state's file
-	var showCursor:Bool = true; // Display system cursor in-game, useful for custom cursor or certain genres of action games
+	var showCursor:Bool = true; // Quick setting, whether to display system cursor in-game, useful for custom cursor or certain genres of action games
 
 	public static var state: States;
 
@@ -21,17 +30,22 @@ class Main extends luxe.Game {
 		return config;
 	}
 
+	// Scale camera's viewport accordingly when game is scaled
+	override function onwindowsized( e:WindowEvent ) {
+        Luxe.camera.viewport = new luxe.Rectangle( 0, 0, e.event.x, e.event.y);
+    }
+
 	override function ready() {
 
-		// Quick setting
+		// Actual codes that hide/show the cursor
 		Luxe.screen.cursor.visible = showCursor;
 
-		// Create a state machine [...]
+		// Create a state machine
 		state = new States( { name: "states" } );
 
 		// Add states to the state machine
-		state.add (new Play());
-		state.add (new Splash());
+		state.add (new Play({name: 'play'}));
+		state.add (new Splash({name: 'splash'}));
 
 		// Set the inital state upon running the game
 		state.set(initialState);

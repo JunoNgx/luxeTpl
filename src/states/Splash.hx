@@ -15,12 +15,8 @@ class Splash extends State {
 	var stayTime: Float = 2;
 	var delaySwitchTime: Float = 1;
 
-	// Set the next state in name (string) here
+	// Optionally and quickly set the next state (with name:String) here
 	var destinationState: String = 'play';
-
-	public function new() {
-		super( { name: "splash" } );
-	}
 
 	override function onenter<T> (_:T) {
 		// Create the logo sprite
