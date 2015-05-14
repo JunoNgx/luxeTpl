@@ -39,6 +39,14 @@ class Main extends luxe.Game {
 
 	override function ready() {
 
+		// Optional, set a consistent scale camera mode for the entire game
+		// this is a luxe's wip feature
+		// Luxe.camera.size = new Vector(Main.w, Main.h);
+		// Luxe.camera.size_mode = SizeMode.fit;
+
+		// Optional, set customized background color
+		// Luxe.renderer.clear_color = new Color().rgb(0xD7D7D7);
+
 		// Actual codes that hide/show the cursor
 		Luxe.screen.cursor.visible = showCursor;
 

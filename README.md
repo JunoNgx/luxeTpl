@@ -11,9 +11,22 @@ A state-centric template for the [Luxe Engine](http://luxeengine.com/), heavily 
 * ```project.flow``` guide comments
 * Optional ```custom_index.html``` for fullscreen HTML5.
 
+# Camera scale mode
+
+Luxe provides a work-in-progress ```camera_scale``` feature, which is useful to handling multiple resolution ratio. In this template, this is defined in ```ready()``` callback in ```Main.hx``` (currently commented):
+
+```
+Luxe.camera.size = new Vector(Main.w, Main.h);
+Luxe.camera.size_mode = SizeMode.fit;
+```
+
+The process is demonstrated in [```tests/wip/camera_scale```](https://github.com/underscorediscovery/luxe/tree/master/tests/wip/camera_scale)
+
+# 
+
 # Fullscreen HTML5
 
-To make a game run in fullscreen HTML5 (ideal for mobile), add the commented ```property``` in ```files``` node of ```project.flow```. It would look something like:
+To make a game run in fullscreen HTML5 (ideal for mobile), add the commented ```property``` in ```files``` node of ```project.flow```. This will order ```flow``` to use a customized ```index.html``` file for HTML5 build. It would look something like:
 
 ```
 files : {
@@ -24,7 +37,7 @@ files : {
 
 ```
 
-The process is also demonstrated in ```Luxe```'s [test of ```TouchEvents```](https://github.com/underscorediscovery/luxe/tree/master/tests/features/touch_events) (at ```tests/features/touch_events```).
+The process is demonstrated in ```Luxe```'s [test of ```TouchEvents```](https://github.com/underscorediscovery/luxe/tree/master/tests/features/touch_events) (at ```tests/features/touch_events```).
 
 # Closing
 
