@@ -16,8 +16,6 @@ class Play extends State {
 	var block: Sprite;
 
 	override public function onenter<T> (_:T) {
-		Luxe.camera.size = new Vector(800, 450);
-		Luxe.camera.size_mode = SizeMode.fit;
 
 		block = new Sprite({
 			name: 'default testing sprite',

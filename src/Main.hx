@@ -1,6 +1,8 @@
 package;
 
 import luxe.Screen.WindowEvent;
+import luxe.Vector;
+import luxe.Color;
 
 import luxe.States;
 import states.Play;
