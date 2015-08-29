@@ -10,50 +10,61 @@
         }
     },
 
-	flow : {
-        build: {
-            android : {
-            	"comments": "Path to your sdk and ant, in quote as strings",
-
-            	"comments": "'C:/AndroidDev/android-sdk-windows/'",
-                sdk : 'C:/AndroidDev/android-sdk-windows/',
-
-                "comments": "On Windows, point to your ant/bin/ant.bat, also in quote",
-                "comments": "'C:/AndroidDev/apache-ant-1.9.4/bin/ant.bat'",
-                ant_path : 'C:/AndroidDev/apache-ant-1.9.4/bin/ant.bat'
-            }
-        }
-    },
-
  	project : {
 		name : 'Luxe App',
 		version : '0.0.1',
 		author : 'mycompany',
 
-    app : {
-    	"comments": "Spacing in app name is currently breaking the build",
-    	"comments": "so avoid spaces for the moment",
-		name : 'LuxeApp',
-		package : 'com.luxeengine.myapp',
-		main : 'Main',
-        mobile: {
-            orientation: 'landscape',
-            android: {
-                sdk_target: '19'
-            }
+        app : {
+        	"comments": "Spacing in app name is currently breaking the build",
+        	"comments": "so avoid spaces for the moment",
+    		name : 'LuxeApp',
+    		package : 'com.luxeengine.myapp',
+    		main : 'Main',
+            mobile: {
+                orientation: 'landscape',
+                android: {
+                    sdk_min: '12',
+                    sdk_target: '19'
+                }
+            },
+            icon : "icons => flow"
+        },
+
+        build : {
+            number: 1,
+
+            "comment" : "flow build android --d android_release",
+            dependencies : {
+                luxe : '*',
+            },
+            files: {
+                keystore_things : 'passwords.sensitive.properties => project/passwords.sensitive.properties'
+            },
+        },
+
+        files : {
+            config : 'config.json',
+            assets : 'assets/',
+            comments: "index : { path:'custom_index.html => index.html', template:'project', not_listed: true }",
         }
     },
 
-    build : {
-      dependencies : {
-        luxe : '*',
-      }
-    },
+    if: {
+        android_release: {
+            app: {
+                mobile: {
+                    android: {
+                        build_type: "release",
+                        keystore_path: "indiedev.keystore",
+                        keystore_alias: "indiedev"
+                    }
+                }
+            },
 
-    files : {
-      config : 'config.json',
-      assets : 'assets/',
-      comments: "index : { path:'custom_index.html => index.html', template:'project', not_listed:true }",
-    }
-  }
+            build: {
+                defines: ['no_debug_console']
+            }
+        }
+    },
 }

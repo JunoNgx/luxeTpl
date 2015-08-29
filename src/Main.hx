@@ -10,15 +10,15 @@ import states.Splash;
 
 class Main extends luxe.Game {
 
+	var initialState: String = 'splash'; // First state to run, in string (luxe.States.State.name), refer to state's file
+	var showCursor: Bool = true; // Quick setting, whether to display system cursor in-game, useful for custom cursor or certain genres of action games
+
 	// Optional values,
 	// useful when game does not fully cover the
 	// entire screen, great to use when
 	// Luxe.camera.size_mode == SizeMode.fit
-	// public static var w: Int = 480;
-	// public static var h: Int = 640;
-
-	var initialState:String = 'splash'; // First state to run, in string (luxe.States.State.name), refer to state's file
-	var showCursor:Bool = true; // Quick setting, whether to display system cursor in-game, useful for custom cursor or certain genres of action games
+	// public static var w: Int = 1280;
+	// public static var h: Int = 720;
 
 	public static var state: States;
 

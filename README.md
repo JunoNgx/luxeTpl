@@ -22,7 +22,9 @@ Luxe.camera.size_mode = SizeMode.fit;
 
 The process is demonstrated in [```tests/wip/camera_scale```](https://github.com/underscorediscovery/luxe/tree/master/tests/wip/camera_scale)
 
-# 
+# App icon
+
+```project.app.icon``` designate the path to icon files (please refer to each respective platform for further details) in format ```folder_name => file_mame_in_platform_folders```.
 
 # Fullscreen HTML5
 
@@ -38,6 +40,22 @@ files : {
 ```
 
 The process is demonstrated in ```Luxe```'s [test of ```TouchEvents```](https://github.com/underscorediscovery/luxe/tree/master/tests/features/touch_events) (at ```tests/features/touch_events```).
+
+# Android stuff
+
+This template is noticably more Android-centric as this is currently my platform of choice. However, this shouldn't affect developers targeting any other platforms. Feel free to go through [my writeup on snowkit.org](http://snowkit.org/2015/08/10/what-i-learned-and-what-you-should-know-about-luxe-on-android/).
+
+```flow.build.android``` is currently removed in view of a reliable setup method for luxe. Refer to [my post on snowkit.org](http://snowkit.org/2015/08/10/what-i-learned-and-what-you-should-know-about-luxe-on-android/).
+
+* ```project.build.number```: this property designates the version number of the build as an integer in ```AndroidManifest.xml```. This is especially important when updating a previously released build.
+
+* ```build.files.keystore_things```: path leading to file containing keystore passwords. Optional, but recommended with care in view of security (to be signed with ```jarsign``` manually yourself otherwise).
+
+* ```if```: conditional node. Use ```flow build android --d android_release``` to build with these properties for a public release, using designated keystore and corresponding alias. The release build also remove debug console (which is toggable with a four-point-touch).
+
+# Others
+
+Currently a place holder for now.
 
 # Closing
 
