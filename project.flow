@@ -26,6 +26,10 @@
                 android: {
                     sdk_min: '12',
                     sdk_target: '19'
+                },
+                ios: {
+                    devices: 'iPhone',
+                    deployment_target: '8.0',
                 }
             },
             icon : "icons => flow"
@@ -39,7 +43,8 @@
                 luxe : '*',
             },
             files: {
-                keystore_things : 'passwords.sensitive.properties => project/passwords.sensitive.properties'
+                keystore: 'indiedev.keystore => project/indiedev.keystore',
+                passwords : 'passwords.sensitive.properties => project/passwords.sensitive.properties'
             },
         },
 
@@ -62,6 +67,12 @@
                 }
             },
 
+            build: {
+                defines: ['no_debug_console']
+            }
+        },
+
+        ios: {
             build: {
                 defines: ['no_debug_console']
             }
